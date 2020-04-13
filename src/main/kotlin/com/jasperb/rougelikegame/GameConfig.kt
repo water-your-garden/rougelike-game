@@ -7,8 +7,11 @@ import org.hexworks.zircon.api.Sizes
 
 object GameConfig {
 
-    val TILESET = CP437TilesetResources.acorn8X16()
+    val TILESET = CP437TilesetResources.rogueYun16x16()
     val THEME = ColorThemes.arc()
+
+    const val SIDEBAR_WIDTH = 18
+    const val LOG_AREA_HEIGHT = 8
 
     const val WINDOW_WIDTH = 80
     const val WINDOW_HEIGHT = 50
