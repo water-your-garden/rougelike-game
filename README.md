@@ -1,3 +1,5 @@
-#Project Title
+# Rougelike game (haven't thought of a name yet)
 
-Project description
+Small isolation project to level up Kotlin skills.
+
+Inspired by Hexaworks [Zircon](https://hexworks.org/) project.
