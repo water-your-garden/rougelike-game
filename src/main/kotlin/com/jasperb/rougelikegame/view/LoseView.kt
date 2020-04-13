@@ -6,6 +6,7 @@ import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.graphics.BoxType
 import org.hexworks.zircon.api.kotlin.onMouseReleased
 import org.hexworks.zircon.api.mvc.base.BaseView
+import kotlin.system.exitProcess
 
 class LoseView : BaseView() {
 
@@ -13,11 +14,13 @@ class LoseView : BaseView() {
 
     override fun onDock() {
         super.onDock()
+
         val message = "You lost!"
         val header = Components.header()
                 .withAlignmentWithin(screen, ComponentAlignment.CENTER)
                 .withText(message)
                 .build()
+
         val restartButton = Components.button()
                 .withAlignmentWithin(screen, ComponentAlignment.BOTTOM_LEFT)
                 .withText("Restart")
@@ -29,6 +32,7 @@ class LoseView : BaseView() {
             replaceWith(PlayView())
             close()
         }
+
         val quitButton = Components.button()
                 .withAlignmentWithin(screen, ComponentAlignment.BOTTOM_RIGHT)
                 .withText("Quit")
@@ -37,7 +41,7 @@ class LoseView : BaseView() {
                 .withBoxType(BoxType.SINGLE)
                 .build()
         quitButton.onMouseReleased {
-            System.exit(0)
+            exitProcess(0)
         }
 
         screen.addComponent(header)

@@ -13,13 +13,16 @@ class StartView : BaseView() {
 
     override fun onDock() {
         super.onDock()
+
         val message = "Welcome"
+
         val header = Components.textBox()
                 .withAlignmentWithin(screen, ComponentAlignment.CENTER)
                 .withContentWidth(message.length)
                 .addHeader(message)
                 .addNewLine()
                 .build()
+
         val startButton = Components.button()
                 .withAlignmentAround(header, ComponentAlignment.BOTTOM_CENTER)
                 .withText("Start")

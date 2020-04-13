@@ -13,6 +13,7 @@ class PlayView : BaseView() {
 
     override fun onDock() {
         super.onDock()
+
         val loseButton = Components.button()
                 .withAlignmentWithin(screen, ComponentAlignment.LEFT_CENTER)
                 .withText("Lose")
@@ -25,6 +26,7 @@ class PlayView : BaseView() {
             replaceWith(LoseView())
             close()
         }
+
         val winButton = Components.button()
                 .withAlignmentWithin(screen, ComponentAlignment.RIGHT_CENTER)
                 .withText("Win")
@@ -37,8 +39,6 @@ class PlayView : BaseView() {
             replaceWith(WinView())
             close()
         }
-
-
 
         screen.addComponent(loseButton)
         screen.addComponent(winButton)
