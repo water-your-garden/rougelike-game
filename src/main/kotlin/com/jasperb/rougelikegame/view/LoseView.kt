@@ -1,7 +1,6 @@
 package com.jasperb.rougelikegame.view
 
 import com.jasperb.rougelikegame.GameConfig
-import org.hexworks.zircon.api.ColorThemes
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.graphics.BoxType
