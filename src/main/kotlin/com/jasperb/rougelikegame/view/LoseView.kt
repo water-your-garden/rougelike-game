@@ -1,5 +1,6 @@
 package com.jasperb.rougelikegame.view
 
+import com.jasperb.rougelikegame.GameConfig
 import org.hexworks.zircon.api.ColorThemes
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
@@ -10,7 +11,7 @@ import kotlin.system.exitProcess
 
 class LoseView : BaseView() {
 
-    override val theme = ColorThemes.arc()
+    override val theme = GameConfig.THEME
 
     override fun onDock() {
         super.onDock()
