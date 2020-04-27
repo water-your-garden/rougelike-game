@@ -2,13 +2,14 @@ package com.jasperb.rougelikegame.builders
 
 import org.hexworks.zircon.api.Tiles
 import org.hexworks.zircon.api.data.CharacterTile
+import org.hexworks.zircon.api.graphics.Symbols
 
 object GameTileRepository {
 
     val EMPTY: CharacterTile = Tiles.empty()
 
     val FLOOR: CharacterTile = Tiles.newBuilder()
-            .withCharacter('∙')
+            .withCharacter(Symbols.INTERPUNCT)
             .withForegroundColor(GameColours.FLOOR_FOREGROUND)
             .withBackgroundColor(GameColours.FLOOR_BACKGROUND)
             .buildCharacterTile()

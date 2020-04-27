@@ -10,7 +10,7 @@ object GameConfig {
     val DUNGEON_LEVELS = 2
 
     val TILESET = CP437TilesetResources.rogueYun16x16()
-    val THEME = ColorThemes.arc()
+    val THEME = ColorThemes.afterglow() // TODO: create own colour theme
 
     const val SIDEBAR_WIDTH = 18
     const val LOG_AREA_HEIGHT = 8
