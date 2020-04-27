@@ -4,7 +4,10 @@ import com.jasperb.rougelikegame.GameConfig
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.graphics.BoxType
-import org.hexworks.zircon.api.kotlin.onMouseReleased
+import org.hexworks.zircon.api.extensions.onComponentEvent
+import org.hexworks.zircon.api.uievent.ComponentEventType
+import org.hexworks.zircon.api.uievent.Processed
+
 import org.hexworks.zircon.api.mvc.base.BaseView
 
 class StartView : BaseView() {
@@ -32,9 +35,10 @@ class StartView : BaseView() {
                 .wrapWithBox()
                 .build()
 
-        startButton.onMouseReleased {
+        startButton.onComponentEvent(ComponentEventType.ACTIVATED) {
             replaceWith(PlayView())
             close()
+            Processed
         }
 
         screen.addComponent(header)

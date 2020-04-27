@@ -4,7 +4,10 @@ import com.jasperb.rougelikegame.GameConfig
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.component.ComponentAlignment
 import org.hexworks.zircon.api.graphics.BoxType
-import org.hexworks.zircon.api.kotlin.onMouseReleased
+import org.hexworks.zircon.api.extensions.onComponentEvent
+import org.hexworks.zircon.api.uievent.ComponentEventType
+import org.hexworks.zircon.api.uievent.Processed
+
 import org.hexworks.zircon.api.mvc.base.BaseView
 import kotlin.system.exitProcess
 
@@ -29,9 +32,10 @@ class WinView : BaseView() {
                 .wrapWithBox()
                 .withBoxType(BoxType.SINGLE)
                 .build()
-        restartButton.onMouseReleased {
+        restartButton.onComponentEvent(ComponentEventType.ACTIVATED) {
             replaceWith(PlayView())
             close()
+            Processed
         }
 
         val quitButton = Components.button()
@@ -41,8 +45,9 @@ class WinView : BaseView() {
                 .wrapWithBox()
                 .withBoxType(BoxType.SINGLE)
                 .build()
-        quitButton.onMouseReleased {
+        quitButton.onComponentEvent(ComponentEventType.ACTIVATED) {
             exitProcess(0)
+            Processed
         }
 
         screen.addComponent(header)
