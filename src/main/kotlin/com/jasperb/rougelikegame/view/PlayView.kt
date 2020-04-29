@@ -3,6 +3,7 @@ package com.jasperb.rougelikegame.view
 import com.jasperb.rougelikegame.GameConfig
 import com.jasperb.rougelikegame.blocks.GameBlock
 import com.jasperb.rougelikegame.world.Game
+import com.jasperb.rougelikegame.world.GameBuilder
 import org.hexworks.zircon.api.Components
 import org.hexworks.zircon.api.GameComponents
 import org.hexworks.zircon.api.component.ComponentAlignment
@@ -10,7 +11,7 @@ import org.hexworks.zircon.api.data.Tile
 import org.hexworks.zircon.api.game.ProjectionMode
 import org.hexworks.zircon.api.mvc.base.BaseView
 
-class PlayView(private val game: Game = Game.create()) : BaseView() {
+class PlayView(private val game: Game = GameBuilder.defaultGame()) : BaseView() {
 
     override val theme = GameConfig.THEME
 

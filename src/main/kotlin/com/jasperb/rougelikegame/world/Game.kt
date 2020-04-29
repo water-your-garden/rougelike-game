@@ -1,12 +1,16 @@
 package com.jasperb.rougelikegame.world
 
-import com.jasperb.rougelikegame.GameConfig
-import org.hexworks.zircon.api.data.impl.Size3D
+import com.jasperb.rougelikegame.attributes.types.Player
+import com.jasperb.rougelikegame.extensions.GameEntity
 
-class Game(val world: World) {
+class Game(val world: World,
+           val player: GameEntity<Player>) {
 
     companion object {
-        fun create(worldSize: Size3D = GameConfig.WORLD_SIZE, visibleSize: Size3D = GameConfig.WORLD_SIZE) =
-                Game(WorldBuilder(worldSize).makeCaves().build(visibleSize))
+        fun create(player: GameEntity<Player>,
+                   world: World) = Game(
+                world = world,
+                player = player
+        )
     }
 }
