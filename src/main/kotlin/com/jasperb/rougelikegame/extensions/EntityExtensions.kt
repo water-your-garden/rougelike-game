@@ -6,9 +6,10 @@ import org.hexworks.amethyst.api.Attribute
 import org.hexworks.cobalt.datatypes.extensions.map
 import org.hexworks.cobalt.datatypes.extensions.orElseThrow
 import org.hexworks.zircon.api.data.Tile
+import org.hexworks.zircon.api.data.impl.Position3D
 import kotlin.reflect.KClass
 
-var AnyGameEntity.position
+var AnyGameEntity.position : Position3D
     get() = tryToFindAttribute(EntityPosition::class).position
     set(value) {
         findAttribute(EntityPosition::class).map {
