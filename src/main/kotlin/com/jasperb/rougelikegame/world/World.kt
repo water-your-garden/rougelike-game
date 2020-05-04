@@ -17,6 +17,8 @@ import org.hexworks.zircon.api.data.Tile
 import org.hexworks.zircon.api.data.impl.Position3D
 import org.hexworks.zircon.api.data.impl.Size3D
 import org.hexworks.zircon.api.game.GameArea
+import org.hexworks.zircon.api.screen.Screen
+import org.hexworks.zircon.api.uievent.UIEvent
 
 class World(startingBlocks: Map<Position3D, GameBlock>, visibleSize: Size3D, actualSize: Size3D)
     : GameArea<Tile, GameBlock> by GameAreaBuilder.newBuilder<Tile, GameBlock>()
@@ -37,6 +39,14 @@ class World(startingBlocks: Map<Position3D, GameBlock>, visibleSize: Size3D, act
                 entity.position = pos
             }
         }
+    }
+
+    fun update(screen: Screen, uiEvent: UIEvent, game: Game) {
+        engine.update(GameContext(
+                world = this,
+                screen = screen,
+                uiEvent = uiEvent,
+                player = game.player))
     }
 
     fun addEntity(entity: Entity<EntityType, GameContext>, position: Position3D) {
