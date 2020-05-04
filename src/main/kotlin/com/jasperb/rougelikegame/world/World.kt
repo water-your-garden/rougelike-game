@@ -90,6 +90,23 @@ class World(startingBlocks: Map<Position3D, GameBlock>, visibleSize: Size3D, act
         return position
     }
 
+    fun moveEntity(entity: GameEntity<EntityType>, position: Position3D): Boolean {
+        var success = false
+        val oldBlock = fetchBlockAt(entity.position)
+        val newBlock = fetchBlockAt(position)
+
+        if (bothBlocksPresent(oldBlock, newBlock)) {
+            success = true
+            oldBlock.get().removeEntity(entity)
+            entity.position = position
+            newBlock.get().addEntity(entity)
+        }
+        return success
+    }
+
+    private fun bothBlocksPresent(oldBlock: Maybe<GameBlock>, newBlock: Maybe<GameBlock>) =
+            oldBlock.isPresent && newBlock.isPresent
+
     companion object {
         private val DEFAULT_BLOCK = GameBlockFactory.floor()
     }
