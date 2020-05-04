@@ -12,8 +12,6 @@ import org.hexworks.zircon.api.extensions.onKeyboardEvent
 import org.hexworks.zircon.api.game.ProjectionMode
 import org.hexworks.zircon.api.mvc.base.BaseView
 import org.hexworks.zircon.api.uievent.KeyboardEventType
-
-]
 import org.hexworks.zircon.api.uievent.Processed
 
 class PlayView(private val game: Game = GameBuilder.defaultGame()) : BaseView() {
