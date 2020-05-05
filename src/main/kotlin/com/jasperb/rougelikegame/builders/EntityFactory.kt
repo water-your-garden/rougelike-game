@@ -3,6 +3,8 @@ package com.jasperb.rougelikegame.builders
 import com.jasperb.rougelikegame.attributes.EntityPosition
 import com.jasperb.rougelikegame.attributes.EntityTile
 import com.jasperb.rougelikegame.attributes.types.Player
+import com.jasperb.rougelikegame.systems.InputReceiver
+import com.jasperb.rougelikegame.systems.Movable
 import com.jasperb.rougelikegame.world.GameContext
 import org.hexworks.amethyst.api.Entities
 import org.hexworks.amethyst.api.builder.EntityBuilder
@@ -15,7 +17,7 @@ object EntityFactory {
 
     fun newPlayer() = newGameEntityOfType(Player) {
         attributes(EntityPosition(), EntityTile(GameTileRepository.PLAYER))
-        behaviors()
-        facets()
+        behaviors(InputReceiver)
+        facets(Movable)
     }
 }
