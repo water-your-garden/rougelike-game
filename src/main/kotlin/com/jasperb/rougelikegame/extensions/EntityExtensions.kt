@@ -2,6 +2,7 @@ package com.jasperb.rougelikegame.extensions
 
 import com.jasperb.rougelikegame.attributes.EntityPosition
 import com.jasperb.rougelikegame.attributes.EntityTile
+import com.jasperb.rougelikegame.attributes.flags.BlockOccupier
 import org.hexworks.amethyst.api.Attribute
 import org.hexworks.cobalt.datatypes.extensions.map
 import org.hexworks.cobalt.datatypes.extensions.orElseThrow
@@ -24,3 +25,6 @@ val AnyGameEntity.tile: Tile
 fun <T : Attribute> AnyGameEntity.tryToFindAttribute(klass: KClass<T>): T = findAttribute(klass).orElseThrow {
     NoSuchElementException("Entity '$this' has no property with type '${klass.simpleName}'")
 }
+
+val AnyGameEntity.occupiesBlock: Boolean
+    get() = findAttribute(BlockOccupier::class).isPresent

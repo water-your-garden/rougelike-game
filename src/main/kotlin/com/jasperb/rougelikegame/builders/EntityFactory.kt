@@ -2,7 +2,9 @@ package com.jasperb.rougelikegame.builders
 
 import com.jasperb.rougelikegame.attributes.EntityPosition
 import com.jasperb.rougelikegame.attributes.EntityTile
+import com.jasperb.rougelikegame.attributes.flags.BlockOccupier
 import com.jasperb.rougelikegame.attributes.types.Player
+import com.jasperb.rougelikegame.attributes.types.Wall
 import com.jasperb.rougelikegame.systems.CameraMover
 import com.jasperb.rougelikegame.systems.InputReceiver
 import com.jasperb.rougelikegame.systems.Movable
@@ -20,5 +22,13 @@ object EntityFactory {
         attributes(EntityPosition(), EntityTile(GameTileRepository.PLAYER))
         behaviors(InputReceiver)
         facets(Movable, CameraMover)
+    }
+
+    fun newWall() = newGameEntityOfType(Wall) {
+        attributes(
+                EntityPosition(),
+                BlockOccupier,
+                EntityTile(GameTileRepository.WALL)
+        )
     }
 }
