@@ -14,7 +14,6 @@ import com.jasperb.rougelikegame.systems.Movable
 import com.jasperb.rougelikegame.world.GameContext
 import org.hexworks.amethyst.api.Entities
 import org.hexworks.amethyst.api.builder.EntityBuilder
-import org.hexworks.amethyst.api.entity.Entity
 import org.hexworks.amethyst.api.entity.EntityType
 
 fun <T : EntityType> newGameEntityOfType(type: T, init: EntityBuilder<T, GameContext>.() -> Unit) =
