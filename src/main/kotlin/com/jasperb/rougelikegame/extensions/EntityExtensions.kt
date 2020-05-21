@@ -37,7 +37,7 @@ val AnyGameEntity.occupiesBlock: Boolean
 fun AnyGameEntity.tryActionsOn(context: GameContext, target: AnyGameEntity): Response {
     var result: Response = Pass
     findAttribute(EntityActions::class).map {
-        it.createActionFor(context, this, target).forEach { action ->
+        it.createActionsFor(context, this, target).forEach { action ->
             if (target.executeCommand(action) is Consumed) {
                 result = Consumed
                 return@forEach

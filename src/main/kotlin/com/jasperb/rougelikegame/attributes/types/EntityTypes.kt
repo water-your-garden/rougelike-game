@@ -6,5 +6,4 @@ object Player : BaseEntityType(
         name = "player")
 
 object Wall : BaseEntityType(
-        name = "wall"
-)
+        name = "wall")

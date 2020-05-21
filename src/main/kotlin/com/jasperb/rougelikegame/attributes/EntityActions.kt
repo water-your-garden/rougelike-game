@@ -11,13 +11,13 @@ import kotlin.reflect.KClass
 
 class EntityActions(private vararg val actions: KClass<out EntityAction<out EntityType, out EntityType>>) : Attribute {
 
-    fun createActionFor(context: GameContext, source: GameEntity<EntityType>, target: GameEntity<EntityType>):
+    fun createActionsFor(context: GameContext, source: GameEntity<EntityType>, target: GameEntity<EntityType>):
             Iterable<EntityAction<out EntityType, out EntityType>> {
         return actions.map {
             try {
                 it.constructors.first().call(context, source, target)
             } catch (e: Exception) {
-                throw IllegalArgumentException("Can't create EntityAction. Dose it have the proper constructor?")
+                throw IllegalArgumentException("Can't create EntityAction. Does it have the proper constructor?")
             }
         }
     }

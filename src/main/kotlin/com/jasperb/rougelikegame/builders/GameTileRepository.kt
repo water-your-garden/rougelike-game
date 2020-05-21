@@ -23,6 +23,6 @@ object GameTileRepository {
     val PLAYER = Tiles.newBuilder()
             .withCharacter('@')
             .withBackgroundColor(GameColours.FLOOR_BACKGROUND)
-            .withForegroundColor(GameColours.BANANA)
+            .withForegroundColor(GameColours.ACCENT_COLOUR)
             .buildCharacterTile()
 }

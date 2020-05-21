@@ -9,7 +9,7 @@ import org.hexworks.zircon.api.Positions
 import org.hexworks.zircon.api.Sizes
 import org.hexworks.zircon.api.data.impl.Size3D
 
-class GameBuilder(val worldSize: Size3D) {
+class GameBuilder(val worldSize: Size3D = WORLD_SIZE) {
 
     private val visibleSize = Sizes.create3DSize(
             xLength = GameConfig.WINDOW_WIDTH - GameConfig.SIDEBAR_WIDTH,
