@@ -2,7 +2,7 @@ package com.jasperb.rougelikegame.builders
 
 import org.hexworks.zircon.api.TileColors
 
-object GameColours {
+object Palette {
     val VERY_DARK_VIOLET = TileColors.fromString("#17111D")
     val SHADOWY_LAVENDER = TileColors.fromString("#4E4A4E")
     val FLINT = TileColors.fromString("#716E61")
@@ -18,11 +18,14 @@ object GameColours {
     val CADET_BLUE = TileColors.fromString("#7AC5CD")
     val HUNTER_GREEN = TileColors.fromString("#215E21")
     val LEAF = TileColors.fromString("#71AA34")
+}
 
-    val FLOOR_FOREGROUND = FLINT
-    val FLOOR_BACKGROUND = VERY_DARK_VIOLET
+object GameColours {
+    val FLOOR_FOREGROUND = Palette.FLINT
+    val FLOOR_BACKGROUND = Palette.VERY_DARK_VIOLET
 
-    val WALL_FOREGROUND = FLINT
-    val WALL_BACKGROUND = SHADOWY_LAVENDER
+    val WALL_FOREGROUND = Palette.FLINT
+    val WALL_BACKGROUND = Palette.SHADOWY_LAVENDER
 
+    val ACCENT_COLOUR = Palette.BANANA
 }
